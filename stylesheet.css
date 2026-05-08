@@ -1,0 +1,359 @@
+/*H1 form title settings*/
+
+h1 {
+        position: relative;
+        left: 25px;
+        top: 75px;
+        text-align: left; 
+        margin-bottom: 1rem;
+        z-index: 1;
+        color: #aa96da;
+        text-shadow: 1px 1px #000000;
+
+}
+
+
+/*Form container*/
+ form {
+        background: #FFFFFF;
+        opacity: 95%;
+        top: 55px;
+        left: 25px;
+        margin: 20px auto !important;
+        padding: 20px;
+        border-radius: 10px;
+        border: 0px;
+        position: relative;
+        z-index: 1;
+}
+
+/* Section dividers */
+        form > div { border: 1px solid #556964; }
+        form > div:not(.submit):not(:first-child):not(:last-child) { border-bottom: 1px;}
+        form > div:first-child { border-radius: 10px 10px 0px 0px; overflow: hidden;}
+        form > div:last-child { border-bottom: 1px solid #556964; }
+        form > div:not(.submit):has(+ div.submit) { border-bottom: 1px solid #556964 !important; border-radius: 0px 0px 0px 10px; overflow: hidden;}
+        form > div:nth-last-child(2):not(.submit) { border-bottom: 1px solid #556964; border-radius: 0px 0px 0px 10px; overflow: hidden; !important}
+        form > div.submit { border: 0px; }
+        form > div.LiveField--calculation { border-bottom: 1px solid; }
+
+/* Hiding empty blocks */
+    div.block--empty, .block--empty, form > div:empty {
+        display: none;
+        margin: 0;
+        padding: 0;
+        height: 0;
+    }
+
+/* Questions */
+    .LiveField__input {
+        background: linear-gradient(180deg, #FFFFFF 0%, #F7F8FA 100%);
+        border-bottom: 1px solid #006AA6 !important;
+        border-radius: 0px;
+        padding: 12px;
+        font-size: 16px;
+        color: #0B1020;
+
+}
+
+    .LiveField__input:focus {
+        background-color: #9EC1B8;
+        border-bottom-color: #05283C !important;
+        outline: none !important;
+        transform: translateY(-1px);
+
+    
+}  
+    .LiveField__header, .QuestionTitle {
+        color: #05283C;
+        font-size: 20px;
+        font-weight: 550;
+        line-height: 0.7;
+        color: #05283C;
+        font-size: 22px;
+        font-weight: 750 !important;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        position: relative;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+
+    }
+
+.LiveField__header::before, .QuestionTitle::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 1px;
+        width: 100%;
+        height: 1px;
+        background: #FFFFFF;
+}
+
+.LiveField__header::after, .QuestionTitle::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 72px;
+        height: 4px;
+        background: linear-gradient(90deg, #9EC1B8, rgba(79,54,96,0.25)) !important;
+        box-shadow: 0 0 14px rgba(165,105,151,0.35) !important;
+}
+
+
+ /*Multiple Choice*/
+ 
+ .Choices__choice {
+        border: 1px solid #006AA6;
+        border-radius: 10px;
+        box-shadow: none;
+        color: #006AA6 !important;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        transition: all 0.5s ease-in-out;
+        display: flex;
+        font-size: 14px;
+        justify-content: flex-start;
+    }
+  
+.Choices__choice:hover {
+        border-color: #A56997;
+        color: #FFFFFF !important;
+        background-color: #9EC1B8;
+        box-shadow: 0 2px 5px rgba(13, 117, 187, 0.2);
+    }
+    
+.Choices__choice.btn-primary, .Choices__choice[aria-checked="true"] {
+        background: linear-gradient(160deg, #05283C 0%, #006AA6 100%);
+        border-color: #A56997;
+        color: #FFFFFF !important;
+    }
+    
+.Choices__choice i.material-icons { 
+        display: none !important; }
+
+
+
+/* Dropdown Menus */
+    
+.Select-menu-outer {
+        background-color: #556964;
+        border: 1px solid #05283C;
+        margin-top: 0px;
+        width: 95%;
+        z-index: 1;
+        animation: fadeIn 0.5s ease-out;
+    
+        
+    }
+
+.Select-option {
+        width:auto;
+        background-color: #FFFFFF;
+        color: #00072D;
+        padding: 14px 20px;
+        font-size: 14px;
+        text-align: left;
+        border-bottom: 1px solid #05283C;
+        transition: background-color 0.5s ease-out 0s, transform 0.3s linear 0.1s;
+        position: relative;
+        z-index: 1;
+    }
+
+.Select-option:last-child { 
+        border-bottom: none; }
+        
+.Select-option.is-focused, .Select-option:hover {
+        background-color: #006AA6;
+        color: #FFFFFF;
+        z-index: 1;
+    }
+    
+
+
+/* Submit button */
+
+.submit .btn-primary {
+        background: linear-gradient(160deg, #05283C 25%, #006AA6 100%);
+        color: white;
+        border-radius: 40px;
+        padding: 20px;
+        margin-top: 20px;
+        overflow: hidden;
+        font-size: 20px !important;
+        border: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .submit .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(13, 117, 187, 0.5);
+    }
+
+    /* Navigation Menu */
+
+#navmenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: #05283C;
+    opacity: 100%;
+    box-shadow: 0 2px 10px rgba(0,0,0,.50);
+    z-index: 2;
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navmenuheader {
+    margin: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.navmenuheader h2 {
+    color: #FFFFFF;
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Menu container (you may need a wrapper div for items) */
+.navmenuitems {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* Menu items */
+.navmenuitem {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+/* Hover */
+.navmenuitem:hover {
+    background-color: #9EC1B8;
+}
+
+/* Active */
+.navmenuitem.active {
+    background-color: #556964;
+    font-weight: 600;
+}
+    
+    /*Mobile Tablets*/
+@media (max-width: 1024px){        
+    
+    h1 {
+        position: relative;
+        left: 0px;
+        top: 0px;
+        text-align: center; 
+        margin-bottom: 1rem;
+        z-index: 2;
+        color: #aa96da;
+        text-shadow: 1px 1px #000000;
+
+}
+    
+    form {
+        margin: 10px auto;
+        padding: 20px 15px !important;
+        align-items: left;
+        position: sticky;
+        top 0px;
+        left: 0px;
+        overflow-y: auto !important;
+        }
+        
+.LiveField__header, .QuestionTitle { 
+        font-size: 16px; 
+    
+}
+        
+,Choices__choice { 
+        padding: 14px 15px; 
+        font-size: 14px; 
+    
+}
+        
+.LiveField__input { 
+        padding: 14px; 
+        font-size: 16px; 
+    
+}
+        
+
+.submit .btn-primary { 
+        margin-top: 25px; 
+        padding: 16px 0; 
+    
+}
+
+    /* Mobile Devices */
+    @media (max-width: 768px){
+    #navmenu {
+        display: none;
+        }
+        
+    }
+@media (max-width: 768px){ 
+
+h1 {
+        position: relative;
+        left: 0px;
+        top: 0px;
+        text-align: center; 
+        margin-bottom: 1rem;
+        z-index: 2;
+        color: #aa96da;
+        text-shadow: 1px 1px #000000;
+
+}
+
+    form {
+        margin: 10px auto;
+        padding: 20px 15px !important;
+        align-items: left;
+        position: sticky;
+        top 0px;
+        left: 0px;
+        overflow-y: auto !important;
+        }
+        
+.LiveField__header, .QuestionTitle { 
+        font-size: 16px; 
+    
+}
+        
+,Choices__choice { 
+        padding: 14px 15px; 
+        font-size: 14px; 
+    
+}
+        
+.LiveField__input { 
+        padding: 14px; 
+        font-size: 16px; 
+    
+}
+        
+
+.submit .btn-primary { 
+        margin-top: 25px; 
+        padding: 16px 0; 
+}
+
