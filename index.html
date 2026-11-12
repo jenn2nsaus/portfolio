@@ -1,1 +1,241 @@
-<h1>My Porfolio</h1>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Jenn Robinson Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: the page reads like a well-built form. Each section is a labelled field,
+   with ruled underlines, mono field labels and a single orange "submit" accent. */
+:root {
+  --bg: #f2f5f8;
+  --surface: #ffffff;
+  --fg: #14212c;
+  --muted: #55667a;
+  --rule: #c9d3de;
+  --accent: #d9461a;
+  --accent-ink: #ffffff;
+  --tint: #e4ebf3;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1620; --surface: #15202c; --fg: #e8eef4; --muted: #93a4b7;
+    --rule: #2a3a4b; --accent: #ff7a4d; --accent-ink: #1a0b05; --tint: #1c2a38;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1620; --surface: #15202c; --fg: #e8eef4; --muted: #93a4b7;
+  --rule: #2a3a4b; --accent: #ff7a4d; --accent-ink: #1a0b05; --tint: #1c2a38;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  padding-block: 40px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.wrap { max-width: 920px; margin: 0 auto; display: flex; flex-direction: column; gap: 64px; }
+
+.label {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted);
+}
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.05; }
+h1 { font-size: clamp(2.8rem, 9vw, 5.5rem); font-weight: 800; letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; letter-spacing: -0.02em; }
+h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+p { margin: 0; }
+
+/* Hero */
+.hero { display: flex; flex-direction: column; gap: 22px; }
+.hero .role { font-family: var(--font-display); font-size: clamp(1.15rem, 2.6vw, 1.5rem); font-weight: 500; color: var(--muted); }
+.hero .role b { color: var(--fg); font-weight: 700; }
+.hero p.lede { max-width: 62ch; font-size: 1.1rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 6px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+  font-family: var(--font-display); font-weight: 700; font-size: 1rem;
+  padding: 12px 20px; border-radius: 6px; border: 2px solid var(--accent);
+  background: var(--accent); color: var(--accent-ink);
+}
+.btn:hover { filter: brightness(1.06); }
+.btn.ghost { background: transparent; color: var(--fg); border-color: var(--fg); }
+.btn.ghost:hover { background: var(--tint); filter: none; }
+.loc { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+
+/* Field sections */
+.field { display: flex; flex-direction: column; gap: 22px; }
+.field > header { display: flex; flex-direction: column; gap: 8px; padding-bottom: 14px; border-bottom: 2px solid var(--fg); }
+.field > header p { color: var(--muted); max-width: 60ch; }
+
+/* Form cards */
+.forms { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+.form-card {
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 10px;
+  padding: 20px; display: flex; flex-direction: column; gap: 16px; min-width: 0;
+}
+.mock { display: flex; flex-direction: column; gap: 9px; padding: 14px; background: var(--tint); border-radius: 6px; }
+.mock i { display: block; height: 9px; border-radius: 2px; background: var(--rule); }
+.mock i:nth-child(1) { width: 42%; background: var(--muted); opacity: .55; }
+.mock i:nth-child(2) { height: 22px; background: var(--surface); border: 1px solid var(--rule); }
+.mock i:nth-child(3) { width: 30%; background: var(--muted); opacity: .55; }
+.mock i:nth-child(4) { height: 22px; background: var(--surface); border: 1px solid var(--rule); }
+.mock i:nth-child(5) { width: 38%; height: 20px; background: var(--accent); border-radius: 4px; }
+.form-card p { color: var(--muted); font-size: 0.97rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.tags li { font-family: var(--font-mono); font-size: 11.5px; padding: 3px 8px; border: 1px solid var(--rule); border-radius: 999px; color: var(--muted); }
+.form-card .open { margin-top: auto; font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--accent); align-self: flex-start; }
+.form-card .open:hover { background: var(--tint); }
+
+/* Project note */
+.build { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+.build div { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.build p { color: var(--muted); }
+
+/* Articles */
+.articles { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0 40px; margin: 0; padding: 0; list-style: none; }
+.articles li { border-bottom: 1px solid var(--rule); min-width: 0; }
+.articles a, .articles span.row { display: flex; justify-content: space-between; gap: 12px; padding: 13px 0; text-decoration: none; }
+.articles a:hover { color: var(--accent); }
+.articles .prod { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); white-space: nowrap; padding-top: 4px; }
+.note { font-size: 0.9rem; color: var(--muted); }
+
+/* Skills */
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; }
+.skills h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.skills ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; color: var(--muted); font-size: 0.97rem; }
+
+footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 16px; border-top: 2px solid var(--fg); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .form-card { transition: transform .15s ease, border-color .15s ease; }
+  .form-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+}
+</style>
+
+<div class="wrap">
+
+  <section class="hero">
+    <span class="label">Portfolio · Customer success, support and documentation</span>
+    <h1>Jenn Robinson</h1>
+    <p class="role"><b>I build forms, fix the tricky tickets</b> and write the help articles people actually finish reading.</p>
+    <p class="lede">Since 2024 I've given hands-on support across Paperform, Papersign and Stepper: webhooks and REST APIs, QA on pre-release features, enterprise demos, and a Help Centre library that customers follow step by step. Below is some of my favourite work.</p>
+    <div class="cta-row">
+      <a class="btn" href="#forms">See my forms</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/jennifer-robinson-4760a411/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="loc">NSW, Australia · Remote</span>
+    </div>
+  </section>
+
+  <section class="field" id="forms">
+    <header>
+      <span class="label">Forms I built</span>
+      <h2>Live forms you can open and try</h2>
+      <p>Each one is a real Paperform. They open in a new tab.</p>
+    </header>
+    <div class="forms">
+
+      <article class="form-card">
+        <div class="mock" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <h3>Halloween Trick-or-Treat Registration</h3>
+        <p>Neighbours register their home for trick-or-treat night. Each submission feeds an interactive route map with the home's hours, treats and allergen information.</p>
+        <ul class="tags"><li>Event registration</li><li>Feeds a live map</li><li>Allergen info</li></ul>
+        <a class="open" href="https://rcdnplx5.paperform.co/" target="_blank" rel="noopener">Open the form →</a>
+      </article>
+
+      <article class="form-card">
+        <div class="mock" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <h3>Digital Art Commission Request</h3>
+        <p>Clients describe what they want created, choose a colour palette and upload inspiration files. On submit they get a unique project reference number.</p>
+        <ul class="tags"><li>Colour palette choice</li><li>File upload</li><li>Reference number</li></ul>
+        <a class="open" href="https://q6oti4u3.paperform.co/" target="_blank" rel="noopener">Open the form →</a>
+      </article>
+
+      <article class="form-card">
+        <div class="mock" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <h3>Inner C Baked Good</h3>
+        <p>A custom-styled form for a baked goods business, built in Paperform.</p>
+        <ul class="tags"><li>Custom form build</li></ul>
+        <a class="open" href="https://ynmg6bxk.paperform.com" target="_blank" rel="noopener">Open the form →</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="field">
+    <header>
+      <span class="label">Beyond the form</span>
+      <h2>What happens after someone hits submit</h2>
+    </header>
+    <div class="build">
+      <div>
+        <h3>Trick-or-treat map</h3>
+        <p>A registration form, an automation workflow, GitHub Actions and a GitHub Pages site wired into one pipeline. Every new registration updates a live neighbourhood map with pumpkin markers and allergen badges.</p>
+      </div>
+      <div>
+        <h3>Stepper workflow templates</h3>
+        <p>Working automations turned into shareable templates, with API keys, connection IDs and customer data stripped out. I also wrote the guidance on what counts as sensitive in those files.</p>
+      </div>
+      <div>
+        <h3>Chat-style icebreaker form</h3>
+        <p>A form that reads like a conversation instead of a questionnaire, refined across six versions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="field">
+    <header>
+      <span class="label">Help Centre writing</span>
+      <h2>Articles I wrote</h2>
+      <p>Step-by-step guides for Paperform and Stepper customers. I test each feature in a sandbox before I document it.</p>
+    </header>
+    <ul class="articles">
+      <li><a href="https://paperform.co/help/articles/how-can-i-connect-my-stepper-account-to-another-paperform-team-as-a-sub-user" target="_blank" rel="noopener"><span>Connecting Stepper workflows as a sub-user</span><span class="prod">Stepper</span></a></li>
+      <li><a href="https://paperform.co/help/articles/how-can-i-check-my-submission-or-file-storage-usage-and-limits/" target="_blank" rel="noopener"><span>How can I check my submission or file storage usage?</span><span class="prod">Paperform</span></a></li>
+      <li><a href="https://paperform.co/help/articles/how-do-i-restore-submissions/" target="_blank" rel="noopener"><span>Can I restore deleted submissions?</span><span class="prod">Paperform</span></a></li>
+      <li><span class="row"><span>AI Insights</span><span class="prod">Paperform</span></span></li>
+      <li><span class="row"><span>What AI features does Paperform have?</span><span class="prod">Paperform</span></span></li>
+      <li><span class="row"><span>Report sharing and scheduling</span><span class="prod">Paperform</span></span></li>
+      <li><span class="row"><span>Survey Quick Add</span><span class="prod">Paperform</span></span></li>
+      <li><span class="row"><span>Listen for an event</span><span class="prod">Stepper</span></span></li>
+      <li><span class="row"><span>BYO Workflow</span><span class="prod">Stepper</span></span></li>
+    </ul>
+    <p class="note">My examples use recurring fictional businesses, such as Pepper Farm and a wizard-themed Potterform, so readers see realistic use cases.</p>
+  </section>
+
+  <section class="field">
+    <header>
+      <span class="label">Toolkit</span>
+      <h2>What I bring to a team</h2>
+    </header>
+    <div class="skills">
+      <div>
+        <h3>Support and success</h3>
+        <ul><li>Complex ticket troubleshooting</li><li>Customer onboarding and training</li><li>Enterprise demonstrations</li><li>Loom training guides</li></ul>
+      </div>
+      <div>
+        <h3>Technical</h3>
+        <ul><li>REST APIs and webhooks</li><li>Calculations and conditional logic</li><li>Custom CSS and JavaScript</li><li>QA and engineering-ready bug reports</li></ul>
+      </div>
+      <div>
+        <h3>Platforms</h3>
+        <ul><li>Paperform, Papersign, Stepper</li><li>Zendesk, Intercom, HubSpot, Chargebee</li><li>Zapier, Make, Airtable, Notion</li><li>GitHub, Figma, Adobe Creative Suite</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="label">Jenn Robinson · NSW, Australia</span>
+    <a class="label" href="https://www.linkedin.com/in/jennifer-robinson-4760a411/" target="_blank" rel="noopener">linkedin.com/in/jennifer-robinson-4760a411</a>
+  </footer>
+
+</div>
+
+</body></html>
