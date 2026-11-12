@@ -11,7 +11,7 @@
   --fg: #14212c;
   --muted: #55667a;
   --rule: #c9d3de;
-  --accent: #d9461a;
+  --accent: #077f94;
   --accent-ink: #ffffff;
   --tint: #e4ebf3;
   --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
@@ -21,13 +21,13 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #0e1620; --surface: #15202c; --fg: #e8eef4; --muted: #93a4b7;
-    --rule: #2a3a4b; --accent: #ff7a4d; --accent-ink: #1a0b05; --tint: #1c2a38;
+    --rule: #2a3a4b; --accent: #3dd6e8; --accent-ink: #042a30; --tint: #1c2a38;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0e1620; --surface: #15202c; --fg: #e8eef4; --muted: #93a4b7;
-  --rule: #2a3a4b; --accent: #ff7a4d; --accent-ink: #1a0b05; --tint: #1c2a38;
+  --rule: #2a3a4b; --accent: #3dd6e8; --accent-ink: #042a30; --tint: #1c2a38;
   color-scheme: dark;
 }
 
@@ -81,13 +81,8 @@ p { margin: 0; }
   background: var(--surface); border: 1px solid var(--rule); border-radius: 10px;
   padding: 20px; display: flex; flex-direction: column; gap: 16px; min-width: 0;
 }
-.mock { display: flex; flex-direction: column; gap: 9px; padding: 14px; background: var(--tint); border-radius: 6px; }
-.mock i { display: block; height: 9px; border-radius: 2px; background: var(--rule); }
-.mock i:nth-child(1) { width: 42%; background: var(--muted); opacity: .55; }
-.mock i:nth-child(2) { height: 22px; background: var(--surface); border: 1px solid var(--rule); }
-.mock i:nth-child(3) { width: 30%; background: var(--muted); opacity: .55; }
-.mock i:nth-child(4) { height: 22px; background: var(--surface); border: 1px solid var(--rule); }
-.mock i:nth-child(5) { width: 38%; height: 20px; background: var(--accent); border-radius: 4px; }
+.shot { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 6px; border: 1px solid var(--rule); background: var(--tint); max-width: 100%; }
+.shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 .form-card p { color: var(--muted); font-size: 0.97rem; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
 .tags li { font-family: var(--font-mono); font-size: 11.5px; padding: 3px 8px; border: 1px solid var(--rule); border-radius: 999px; color: var(--muted); }
@@ -125,7 +120,7 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12
   <section class="hero">
     <span class="label">Portfolio · Customer success, support and documentation</span>
     <h1>Jenn Robinson</h1>
-    <p class="role"><b>I build forms, create workflows,</b> and write help articles.</p>
+    <p class="role"><b>I build forms, create workflows, and write help articles.</b></p>
     <p class="lede">Since 2024, I've given hands-on support across Paperform, Papersign and Stepper: webhooks and REST APIs, QA on pre-release features, enterprise demos, and a Help Centre library that customers can easily follow step by step. Below is some of my favourite work.</p>
     <div class="cta-row">
       <a class="btn" href="#forms">See my forms</a>
@@ -143,27 +138,27 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12
     <div class="forms">
 
       <article class="form-card">
-        <div class="mock" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <span class="shot"><img src="img/halloween.jpg" alt="Top of the Halloween Trick-or-Treat Registration form: a neon Trick-or-Treat Map banner with pumpkins, a cat and a ghost, then the homeowner fields." loading="lazy"></span>
         <h3>Halloween Trick-or-Treat Registration</h3>
-        <p>Neighbours register their home for trick-or-treat night. Each submission feeds an interactive route map with the home's hours, treats and allergen information.</p>
-        <ul class="tags"><li>Event registration</li><li>Feeds a live map</li><li>Allergen info</li></ul>
+        <p>Neighbours register their home for trick-or-treat night, with a neon theme that matches the map.</p>
+        <ul class="tags"><li>Event registration</li><li>Address to map marker</li><li>Custom theme</li></ul>
         <a class="open" href="https://rcdnplx5.paperform.co/" target="_blank" rel="noopener">Open the form →</a>
       </article>
 
       <article class="form-card">
-        <div class="mock" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <span class="shot"><img src="img/art.jpg" alt="Top of the Digital Art Commission Request form: name, email, design type, preferred primary colour and style direction images, beside a glossy abstract sculpture." loading="lazy"></span>
         <h3>Digital Art Commission Request</h3>
-        <p>Clients describe what they want created, choose a colour palette and upload inspiration files. On submit they get a unique project reference number.</p>
-        <ul class="tags"><li>Colour palette choice</li><li>File upload</li><li>Reference number</li></ul>
+        <p>Clients describe what they want created, pick a design type, primary colour and style direction, and upload inspiration files.</p>
+        <ul class="tags"><li>Colour picker</li><li>Style direction images</li><li>File upload</li></ul>
         <a class="open" href="https://q6oti4u3.paperform.co/" target="_blank" rel="noopener">Open the form →</a>
       </article>
 
       <article class="form-card">
-        <div class="mock" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-        <h3>Inner C Baked Good</h3>
-        <p>A custom-styled form for a baked goods business, built in Paperform.</p>
-        <ul class="tags"><li>Custom form build</li></ul>
-        <a class="open" href="https://ynmg6bxk.paperform.com" target="_blank" rel="noopener">Open the form →</a>
+        <span class="shot"><img src="img/innerc.jpg" alt="Top of the Find Your Inner C Baked Good quiz: a chocolate snail cookie with sprinkles, the quiz introduction and the name and email questions on a brown background." loading="lazy"></span>
+        <h3>Find Your Inner 'C' Baked Good</h3>
+        <p>A fun personality quiz: answer 10 quick questions to find out which baked good starting with C matches you.</p>
+        <ul class="tags"><li>10-question quiz</li><li>Calculations</li><li>Emailed results</li></ul>
+        <a class="open" href="https://ynmg6bxk.paperform.co/" target="_blank" rel="noopener">Open the form →</a>
       </article>
 
     </div>
@@ -172,20 +167,20 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12
   <section class="field">
     <header>
       <span class="label">Beyond the form</span>
-      <h2>What happens after someone hits submit</h2>
+      <h2>What each form does after someone hits submit</h2>
     </header>
     <div class="build">
       <div>
-        <h3>Trick-or-treat map</h3>
-        <p>A registration form, an automation workflow, GitHub Actions and a GitHub Pages site wired into one pipeline. Every new registration updates a live neighbourhood map with pumpkin markers and allergen badges.</p>
+        <h3>Halloween map</h3>
+        <p>The form takes the address from its address field and creates a marker for that home on the trick-or-treat map. The map opens on the Central Coast, and you can scroll it to find other locations. Each marker shows the home's hours, treats and allergen information.</p>
       </div>
       <div>
-        <h3>Stepper workflow templates</h3>
-        <p>Working automations turned into shareable templates, with API keys, connection IDs and customer data stripped out. I also wrote the guidance on what counts as sensitive in those files.</p>
+        <h3>Art commission invoices</h3>
+        <p>The form uses Stepper to create an invoice number for each request and email it to the recipient. It came out of a problem-solving project to give customers sequential order numbers, a long-standing issue.</p>
       </div>
       <div>
-        <h3>Chat-style icebreaker form</h3>
-        <p>A form that reads like a conversation instead of a questionnaire, refined across six versions.</p>
+        <h3>Baked good personality quiz</h3>
+        <p>A calculation works out which baked good you are from your ten answers. The form then emails you a pie chart showing the breakdown of your result.</p>
       </div>
     </div>
   </section>
