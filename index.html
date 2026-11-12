@@ -1,238 +1,474 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Jenn Robinson Portfolio</title>
-<meta name="Jenn's Portfolio" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<style>
-/* Layout: the page reads like a well-built form. Each section is a labelled field,
-   with ruled underlines, mono field labels and a single orange "submit" accent. */
-:root {
-  --bg: #f2f5f8;
-  --surface: #ffffff;
-  --fg: #14212c;
-  --muted: #55667a;
-  --rule: #c9d3de;
-  --accent: #077f94;
-  --accent-ink: #ffffff;
-  --tint: #e4ebf3;
-  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
-  --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0e1620; --surface: #15202c; --fg: #e8eef4; --muted: #93a4b7;
-    --rule: #2a3a4b; --accent: #3dd6e8; --accent-ink: #042a30; --tint: #1c2a38;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0e1620; --surface: #15202c; --fg: #e8eef4; --muted: #93a4b7;
-  --rule: #2a3a4b; --accent: #3dd6e8; --accent-ink: #042a30; --tint: #1c2a38;
-  color-scheme: dark;
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Jenn Robinson — customer success, SaaS support, workflow automation and documentation.">
+  <title>Jenn Robinson — Customer Success & SaaS</title>
 
-* { box-sizing: border-box; }
-body {
-  background: var(--bg); color: var(--fg);
-  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
-  padding-block: 40px 72px;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-}
-a { color: inherit; }
-a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
-.wrap { max-width: 920px; margin: 0 auto; display: flex; flex-direction: column; gap: 64px; }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-.label {
-  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--muted);
-}
-h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.05; }
-h1 { font-size: clamp(2.8rem, 9vw, 5.5rem); font-weight: 800; letter-spacing: -0.03em; }
-h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; letter-spacing: -0.02em; }
-h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
-p { margin: 0; }
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f1ef;
+      --paper-deep: #e9e3e6;
+      --card: #fffdfc;
+      --ink: #081849;
+      --muted: #68677a;
+      --line: #d8d1dc;
+      --lapis: #213885;
+      --midnight: #081849;
+      --plum: #5f3475;
+      --velvet: #893172;
+      --lavender: #b693ef;
+      --warm: #ecdfd2;
+      --soft-grey: #cccacc;
+      --display: "Manrope", sans-serif;
+      --body: "DM Sans", sans-serif;
+      --mono: "DM Mono", monospace;
+      --shadow: 0 20px 55px rgba(8, 24, 73, .12);
+    }
 
-/* Hero */
-.hero { display: flex; flex-direction: column; gap: 22px; }
-.hero .role { font-family: var(--font-display); font-size: clamp(1.15rem, 2.6vw, 1.5rem); font-weight: 500; color: var(--muted); }
-.hero .role b { color: var(--fg); font-weight: 700; }
-.hero p.lede { max-width: 62ch; font-size: 1.1rem; }
-.cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 6px; }
-.btn {
-  display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
-  font-family: var(--font-display); font-weight: 700; font-size: 1rem;
-  padding: 12px 20px; border-radius: 6px; border: 2px solid var(--accent);
-  background: var(--accent); color: var(--accent-ink);
-}
-.btn:hover { filter: brightness(1.06); }
-.btn.ghost { background: transparent; color: var(--fg); border-color: var(--fg); }
-.btn.ghost:hover { background: var(--tint); filter: none; }
-.loc { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 8% 3%, rgba(182, 147, 239, .18), transparent 31rem),
+        radial-gradient(ellipse at 96% 24%, rgba(137, 49, 114, .10), transparent 29rem),
+        linear-gradient(145deg, #f7f4f4 0%, #f0edf2 48%, #f5f0ed 100%);
+      background-attachment: fixed;
+      color: var(--ink);
+      font: 17px/1.65 var(--body);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--velvet); outline-offset: 4px; border-radius: 3px; }
+    img { display: block; max-width: 100%; }
+    .skip-link {
+      position: absolute; left: 1rem; top: -5rem; z-index: 20;
+      padding: .7rem 1rem; background: linear-gradient(120deg, #081849 0%, #213885 52%, #5f3475 100%); color: white; border-radius: 8px;
+    }
+    .skip-link:focus { top: 1rem; }
+    .site-header {
+      width: min(1160px, calc(100% - 48px));
+      margin: 0 auto;
+      min-height: 82px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      border-bottom: 1px solid rgba(8, 24, 73, .14);
+    }
+    .brand {
+      display: inline-flex; align-items: center; gap: 11px;
+      text-decoration: none; font: 800 15px var(--display); letter-spacing: -.04em;
+    }
+    .brand-mark {
+      display: grid; place-items: center; width: 36px; height: 36px;
+      border-radius: 50% 50% 45% 45%; background: linear-gradient(125deg, var(--lapis), var(--plum) 72%, var(--velvet)); color: white;
+      font: 700 12px var(--mono); letter-spacing: -.08em;
+      box-shadow: 0 5px 18px rgba(33, 56, 133, .24);
+    }
+    .nav { display: flex; flex-wrap: wrap; gap: 26px; align-items: center; }
+    .nav a {
+      color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 700;
+      transition: color .2s ease;
+    }
+    .nav a:hover { color: var(--plum); }
+    .nav .nav-contact {
+      padding: 9px 15px; border: 1px solid var(--line); border-radius: 999px;
+      color: var(--ink); background: rgba(255,255,255,.5);
+    }
+    main { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+    .hero {
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr);
+      gap: 64px; align-items: center; padding: 92px 0 100px;
+    }
+    .hero::after {
+      content: ""; position: absolute; width: 360px; height: 360px; border-radius: 50%;
+      border: 1px solid rgba(95,52,117,.16); right: 3%; top: 9%; pointer-events: none;
+      box-shadow: 0 0 0 28px rgba(95,52,117,.025), 0 0 0 58px rgba(33,56,133,.02);
+    }
+    .eyebrow, .section-kicker {
+      color: var(--plum); font: 500 11px/1.4 var(--mono);
+      letter-spacing: .14em; text-transform: uppercase;
+    }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 23px; }
+    .eyebrow::before { content: ""; width: 27px; height: 1px; background: var(--velvet); }
+    h1, h2, h3 { margin: 0; font-family: var(--display); text-wrap: balance; }
+    h1 {
+      max-width: 760px; font-size: clamp(3.4rem, 8vw, 6.8rem);
+      line-height: .99; letter-spacing: -.075em; font-weight: 800;
+    }
+    h1 .name-accent {
+      color: transparent;
+      background: linear-gradient(115deg, #213885 8%, #5f3475 58%, #893172 100%);
+      -webkit-background-clip: text; background-clip: text;
+    }
+    .hero-subtitle {
+      margin: 25px 0 13px; max-width: 620px;
+      font: 600 clamp(1.1rem, 2.2vw, 1.45rem)/1.4 var(--display);
+      letter-spacing: -.035em;
+    }
+    .hero-copy { max-width: 650px; color: var(--muted); font-size: 1.02rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 30px; }
+    .button {
+      display: inline-flex; justify-content: center; align-items: center; gap: 10px;
+      padding: 12px 19px; border-radius: 999px; text-decoration: none;
+      font-size: 14px; font-weight: 700; transition: transform .2s, box-shadow .2s, background .2s;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: linear-gradient(125deg, var(--lapis), var(--plum) 72%, var(--velvet)); color: white; box-shadow: 0 9px 24px rgba(33,56,133,.23); }
+    .button-primary:hover { background: linear-gradient(120deg, var(--midnight), var(--plum)); box-shadow: 0 12px 28px rgba(33,56,133,.28); }
+    .button-secondary { border: 1px solid var(--line); background: rgba(255,255,255,.55); }
+    .button-secondary:hover { background: white; }
+    .hero-note { color: var(--muted); font: 11px var(--mono); letter-spacing: .05em; margin-top: 20px; }
+    .hero-card {
+      position: relative; z-index: 1; padding: 28px; border: 1px solid rgba(95,52,117,.22);
+      border-radius: 22px;
+      background: linear-gradient(145deg, rgba(255,253,252,.96), rgba(236,223,210,.88));
+      box-shadow: var(--shadow);
+      transform: rotate(1.5deg);
+    }
+    .hero-card::before {
+      content: ""; position: absolute; inset: -1px; z-index: -1; border-radius: inherit;
+      padding: 1px; background: linear-gradient(135deg, rgba(182,147,239,.8), rgba(33,56,133,.18), rgba(137,49,114,.55));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+    }
+    .hero-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+    .hero-card-top span:first-child { font: 11px var(--mono); color: var(--muted); letter-spacing: .1em; text-transform: uppercase; }
+    .status-dot { width: 9px; height: 9px; border-radius: 50%; background: #893172; box-shadow: 0 0 0 5px #f0e7f2; }
+    .hero-card h2 { font-size: 1.55rem; letter-spacing: -.05em; margin-bottom: 9px; }
+    .hero-card p { color: var(--muted); font-size: 14px; }
+    .mini-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 25px; }
+    .mini-stat { padding: 13px; border-radius: 12px; background: #eee8f3; }
+    .mini-stat strong { display: block; font: 800 21px var(--display); letter-spacing: -.06em; }
+    .mini-stat span { display: block; margin-top: 2px; color: var(--muted); font: 10px var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+    .section { padding: 72px 0; border-top: 1px solid var(--line); }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 31px; }
+    .section-kicker { display: block; margin-bottom: 11px; }
+    h2.section-title { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.08; letter-spacing: -.065em; }
+    .section-intro { max-width: 470px; color: var(--muted); font-size: 14px; }
+    /* Add future product cards as another .project-card. The grid auto-fills columns,
+       keeps a consistent image ratio and equal-height cards, and needs no special last-card rule. */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+      grid-auto-rows: 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+    .project-card {
+      min-width: 0; min-height: 570px; height: 100%; overflow: hidden; display: flex; flex-direction: column;
+      background: linear-gradient(160deg, #fffdfc 0%, #fbf8fa 100%);
+      border: 1px solid var(--line); border-radius: 17px;
+      box-shadow: 0 5px 20px rgba(8,24,73,.055);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: #b9a4cb; }
+    .project-image { aspect-ratio: 4/3; overflow: hidden; background: linear-gradient(145deg, #eee8f0, #e9e3e6); }
+    .project-image img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .5s ease; }
+    .project-card:hover .project-image img { transform: scale(1.035); }
+    .project-content { display: flex; flex: 1; flex-direction: column; padding: 22px; }
+    .project-number { color: var(--velvet); font: 11px var(--mono); letter-spacing: .12em; margin-bottom: 12px; }
+    .project-content h3 { font-size: 1.25rem; line-height: 1.2; letter-spacing: -.045em; }
+    .project-content p { color: var(--muted); font-size: 14px; margin-top: 10px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 17px 0 22px; padding: 0; }
+    .tags li { padding: 5px 9px; border-radius: 999px; background: #eee8f3; color: var(--plum); font: 10px var(--mono); }
+    .project-link {
+      display: inline-flex; align-items: center; gap: 8px; align-self: flex-start;
+      margin-top: auto; color: var(--plum); font-size: 13px; font-weight: 700;
+      text-decoration: none; border-bottom: 1px solid #b7a2c8; padding-bottom: 3px;
+    }
+    .project-link span { transition: transform .2s; }
+    .project-link:hover span { transform: translate(3px,-3px); }
+    .process-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .process-card { padding: 24px; border-radius: 16px; background: linear-gradient(145deg, #eee8f0, #e9e3e6); }
+    .process-icon {
+      display: grid; place-items: center; width: 38px; height: 38px; margin-bottom: 21px;
+      border-radius: 12px; background: var(--card); color: var(--plum); font: 15px var(--mono);
+    }
+    .process-card h3 { font-size: 1.15rem; letter-spacing: -.04em; }
+    .process-card p { margin-top: 9px; color: var(--muted); font-size: 14px; }
+    .articles-panel {
+      padding: 10px 28px; border: 1px solid var(--line); border-radius: 17px;
+      background: var(--card); display: grid; grid-template-columns: 1fr 1fr; column-gap: 42px;
+    }
+    .article-link {
+      min-width: 0; display: flex; justify-content: space-between; align-items: flex-start; gap: 14px;
+      padding: 16px 0; border-bottom: 1px solid var(--line); text-decoration: none;
+      font-size: 14px; transition: color .2s;
+    }
+    .article-link:hover { color: var(--lapis); }
+    .article-link .product {
+      flex: 0 0 auto; padding-top: 3px; color: var(--muted);
+      font: 9px var(--mono); text-transform: uppercase; letter-spacing: .08em;
+    }
+    .articles-note { margin-top: 15px; color: var(--muted); font-size: 12px; }
+    .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .skill-card { padding: 25px; border-radius: 16px; border: 1px solid var(--line); background: rgba(255,253,252,.72); }
+    .skill-card h3 { font-size: 1.15rem; letter-spacing: -.04em; margin-bottom: 15px; }
+    .skill-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; color: var(--muted); font-size: 14px; }
+    .skill-card li { display: flex; gap: 9px; }
+    .skill-card li::before { content: "↗"; color: var(--velvet); font-size: 12px; }
+    .closing {
+      display: flex; justify-content: space-between; align-items: center; gap: 30px;
+      margin: 45px 0 70px; padding: 32px; border-radius: 20px;
+      background: linear-gradient(120deg, #081849 0%, #213885 52%, #5f3475 100%); color: white;
+    }
+    .closing h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); letter-spacing: -.055em; }
+    .closing p { margin-top: 7px; color: #ded5e8; font-size: 14px; }
+    .closing .button { flex: 0 0 auto; background: linear-gradient(115deg, #ecdfd2, #b693ef); color: var(--midnight); }
+    footer {
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+      padding: 22px 0 32px; border-top: 1px solid var(--line);
+      color: var(--muted); font: 10px var(--mono); letter-spacing: .06em; text-transform: uppercase;
+    }
+    footer a { text-decoration: none; }
+    footer a:hover { color: var(--plum); }
 
-/* Field sections */
-.field { display: flex; flex-direction: column; gap: 22px; }
-.field > header { display: flex; flex-direction: column; gap: 8px; padding-bottom: 14px; border-bottom: 2px solid var(--fg); }
-.field > header p { color: var(--muted); max-width: 60ch; }
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; gap: 35px; padding: 70px 0 76px; }
+      .hero-card { max-width: 430px; transform: none; }
+      .hero::after { right: -120px; top: 4%; }
+      .project-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 12px; }
+    }
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      .site-header, main { width: min(100% - 34px, 1160px); }
+      .site-header { min-height: 70px; }
+      .nav { gap: 13px; }
+      .nav a { font-size: 11px; }
+      .nav .nav-contact { padding: 7px 10px; }
+      .brand { font-size: 13px; }
+      .brand-mark { width: 32px; height: 32px; }
+      .hero { padding: 58px 0 62px; }
+      h1 { font-size: clamp(3.2rem, 16vw, 5rem); }
+      .hero-copy { font-size: .96rem; }
+      .section { padding: 55px 0; }
+      .project-grid, .process-grid, .skills-grid, .articles-panel { grid-template-columns: 1fr; }
+      .project-card { min-height: 540px; }
+      .articles-panel { padding: 4px 20px; }
+      .closing { align-items: flex-start; flex-direction: column; padding: 25px; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
 
-/* Form cards */
-.forms { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
-.form-card {
-  background: var(--surface); border: 1px solid var(--rule); border-radius: 10px;
-  padding: 20px; display: flex; flex-direction: column; gap: 16px; min-width: 0;
-}
-.shot { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 6px; border: 1px solid var(--rule); background: var(--tint); max-width: 100%; }
-.shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-.form-card p { color: var(--muted); font-size: 0.97rem; }
-.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
-.tags li { font-family: var(--font-mono); font-size: 11.5px; padding: 3px 8px; border: 1px solid var(--rule); border-radius: 999px; color: var(--muted); }
-.form-card .open { margin-top: auto; font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--accent); align-self: flex-start; }
-.form-card .open:hover { background: var(--tint); }
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-/* Project note */
-.build { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
-.build div { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-.build p { color: var(--muted); }
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Jenn Robinson, home">
+      <span class="brand-mark">JR</span>
+      <span>Jenn Robinson</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#work">Selected work</a>
+      <a href="#writing">Writing</a>
+      <a href="#toolkit">Toolkit</a>
+      <a class="nav-contact" href="https://www.linkedin.com/in/jennifer-robinson-4760a411/" target="_blank" rel="noopener noreferrer">Say hello ↗</a>
+    </nav>
+  </header>
 
-/* Articles */
-.articles { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0 40px; margin: 0; padding: 0; list-style: none; }
-.articles li { border-bottom: 1px solid var(--rule); min-width: 0; }
-.articles a, .articles span.row { display: flex; justify-content: space-between; gap: 12px; padding: 13px 0; text-decoration: none; }
-.articles a:hover { color: var(--accent); }
-.articles .prod { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); white-space: nowrap; padding-top: 4px; }
-.note { font-size: 0.9rem; color: var(--muted); }
-
-/* Skills */
-.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; }
-.skills h3 { font-size: 1.05rem; margin-bottom: 8px; }
-.skills ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; color: var(--muted); font-size: 0.97rem; }
-
-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 16px; border-top: 2px solid var(--fg); }
-
-@media (prefers-reduced-motion: no-preference) {
-  .form-card { transition: transform .15s ease, border-color .15s ease; }
-  .form-card:hover { transform: translateY(-3px); border-color: var(--accent); }
-}
-</style>
-
-<div class="wrap">
-
-  <section class="hero">
-    <span class="label">Portfolio · Customer success, support and documentation</span>
-    <h1>Jenn Robinson</h1>
-    <p class="role"><b>I build forms, create workflows, and write help articles.</b></p>
-    <p class="lede">Since 2024, I've given hands-on support across Paperform, Papersign and Stepper: webhooks and REST APIs, QA on pre-release features, enterprise demos, and a Help Centre library that customers can easily follow step by step. Below is some of my favourite work.</p>
-    <div class="cta-row">
-      <a class="btn" href="#forms">See my forms</a>
-      <a class="btn ghost" href="https://www.linkedin.com/in/jennifer-robinson-4760a411/" target="_blank" rel="noopener">LinkedIn</a>
-      <span class="loc">NSW, Australia · Remote</span>
-    </div>
-  </section>
-
-  <section class="field" id="forms">
-    <header>
-      <span class="label">Forms I built</span>
-      <h2>Live forms you can open and try</h2>
-      <p>Each one is a real Paperform. They open in a new tab.</p>
-    </header>
-    <div class="forms">
-
-      <article class="form-card">
-        <span class="shot"><img src="halloween.jpg" alt="Top of the Halloween Trick-or-Treat Registration form: a neon Trick-or-Treat Map banner with pumpkins, a cat and a ghost, then the homeowner fields." loading="lazy"></span>
-        <h3>Halloween Trick-or-Treat Registration</h3>
-        <p>Neighbours register their home for trick-or-treat night, with a neon theme that matches the map.</p>
-        <ul class="tags"><li>Event registration</li><li>Address to map marker</li><li>Custom theme</li></ul>
-        <a class="open" href="https://rcdnplx5.paperform.co/" target="_blank" rel="noopener">Open the form →</a>
-      </article>
-
-      <article class="form-card">
-        <span class="shot"><img src="art.jpg" alt="Top of the Digital Art Commission Request form: name, email, design type, preferred primary colour and style direction images, beside a glossy abstract sculpture." loading="lazy"></span>
-        <h3>Digital Art Commission Request</h3>
-        <p>Clients describe what they want created, pick a design type, primary colour and style direction, and upload inspiration files.</p>
-        <ul class="tags"><li>Colour picker</li><li>Style direction images</li><li>File upload</li></ul>
-        <a class="open" href="https://q6oti4u3.paperform.co/" target="_blank" rel="noopener">Open the form →</a>
-      </article>
-
-      <article class="form-card">
-        <span class="shot"><img src="innerc.jpg" alt="Top of the Find Your Inner C Baked Good quiz: a chocolate snail cookie with sprinkles, the quiz introduction and the name and email questions on a brown background." loading="lazy"></span>
-        <h3>Find Your Inner 'C' Baked Good</h3>
-        <p>A fun personality quiz: answer 10 quick questions to find out which baked good starting with C matches you.</p>
-        <ul class="tags"><li>10-question quiz</li><li>Calculations</li><li>Emailed results</li></ul>
-        <a class="open" href="https://ynmg6bxk.paperform.co/" target="_blank" rel="noopener">Open the form →</a>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="field">
-    <header>
-      <span class="label">Beyond the form</span>
-      <h2>What each form does after someone hits submit</h2>
-    </header>
-    <div class="build">
+  <main id="main">
+    <section class="hero" aria-labelledby="intro-title">
       <div>
-        <h3>Halloween map</h3>
-        <p>The form takes the address from its address field and creates a marker for that home on the trick-or-treat map. The map opens on the Central Coast, and you can scroll it to find other locations. Each marker shows the home's hours, treats and allergen information.</p>
+        <span class="eyebrow">Customer success · SaaS · Workflows</span>
+        <h1 id="intro-title">Hi, I'm <span class="name-accent">Jenn.</span></h1>
+        <p class="hero-subtitle">I make complicated things feel simple.</p>
+        <p class="hero-copy">
+          I work with a mix of customer support, technology, and creativity.
+          Since 2024, I've helped customers get more from Paperform, Papersign, and Stepper.
+          I have experience in untangling tricky workflows and APIs, testing new features, running Enterprise
+          demos, and writing thorough help articles.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href="https://www.linkedin.com/in/jennifer-robinson-4760a411/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
+        </div>
+        <p class="hero-note">BASED IN NSW, AUSTRALIA · WORKING REMOTELY</p>
       </div>
-      <div>
-        <h3>Art commission invoices</h3>
-        <p>The form uses Stepper to create an invoice number for each request and email it to the recipient. It came out of a problem-solving project to give customers sequential order numbers, a long-standing issue.</p>
-      </div>
-      <div>
-        <h3>Baked good personality quiz</h3>
-        <p>A calculation works out which baked good you are from your ten answers. The form then emails you a pie chart showing the breakdown of your result.</p>
-      </div>
-    </div>
-  </section>
 
-  <section class="field">
-    <header>
-      <span class="label">Help Centre writing</span>
-      <h2>Articles I wrote</h2>
-      <p>Step-by-step guides for Paperform and Stepper customers. I test each feature in a sandbox before I document it.</p>
-    </header>
-    <ul class="articles">
-      <li><a href="https://paperform.com/help/articles/sub-user-stepper-workflows-connecting-another-paperform-team/" target="_blank" rel="noopener"><span>Connecting Stepper workflows as a sub-user</span><span class="prod">Stepper</span></a></li>
-      <li><a href="https://paperform.co/help/articles/how-can-i-check-my-submission-or-file-storage-usage-and-limits/" target="_blank" rel="noopener"><span>How can I check my submission or file storage usage?</span><span class="prod">Paperform</span></a></li>
-      <li><a href="https://paperform.com/help/articles/ai-reports-guide/" target="_blank" rel="noopener"><span class="row"><span>AI Insights</span><span class="prod">Paperform</span></span></li>
-      <li><a href="https://paperform.com/help/articles/what-ai-features-does-paperform-have/" target="_blank" rel="noopener"><span class="row"><span>What AI features does Paperform have?</span><span class="prod">Paperform</span></span></li>
-      <li><a href="https://paperform.com/help/articles/analytics-guide/" target="_blank" rel="noopener"><span class="row"><span>Reports and Analytics Guide</span><span class="prod">Paperform</span></span></li>
-      <li><a href="https://paperform.com/help/articles/quicksurveyfields/" target="_blank" rel="noopener"><span class="row"><span>Survey Quick Add</span><span class="prod">Paperform</span></span></li>
-      <li><a href="https://paperform.com/help/articles/getting-started-with-stepper/#:~:text=Testing%20your%20workflow-,Listen%20for%20a%20New%20Event,-There%20may%20be" target="_blank" rel="noopener"><span class="row"><span>Listen for an event</span><span class="prod">Stepper</span></span></li>
-      <li><a href="https://paperform.com/help/articles/how-can-i-import-my-workflows-other-automation-tools-into-stepper/" target="_blank" rel="noopener"><span class="row"><span>How can I import my workflows other automation tools into Stepper?
-</span><span class="prod">Stepper</span></span></li>
-        <li><a href="https://paperform.com/help/articles/how-do-i-request-a-new-stepper-app/" target="_blank" rel="noopener"><span class="row"><span>How Do I Request a New Stepper App?</span><span class="prod">Stepper</span></span></li>
-        <li><a href="https://paperform.com/help/articles/how-to-pause-stepper-workflows-and-runs/" target="_blank" rel="noopener"><span class="row"><span>How to Pause Stepper Workflows and Runs</span><span class="prod">Stepper</span></span></li>
-    </ul>
-    <p class="note">Screenshots for the articles were created using Figma.</p>
-  </section>
+      <aside class="hero-card" aria-label="A snapshot of my work">
+        <div class="hero-card-top">
+          <span>A little about my work</span>
+          <span class="status-dot" aria-label="Currently working in SaaS"></span>
+        </div>
+        <h2>Curious by nature.<br>Practical by default.</h2>
+        <p>I enjoy finding the missing piece — whether that's a better workflow, a clearer explanation or a clever workaround.</p>
+        <div class="mini-stats">
+          <div class="mini-stat"><strong>3</strong><span>Products supported</span></div>
+          <div class="mini-stat"><strong>10+</strong><span>Help articles</span></div>
+          <div class="mini-stat"><strong>API</strong><span>Technical support</span></div>
+          <div class="mini-stat"><strong>QA</strong><span>Feature testing</span></div>
+        </div>
+      </aside>
+    </section>
 
-  <section class="field">
-    <header>
-      <span class="label">Toolkit</span>
-      <h2>What I bring to a team</h2>
-    </header>
-    <div class="skills">
-      <div>
-        <h3>Support and success</h3>
-        <ul><li>Complex ticket troubleshooting</li><li>Customer onboarding and training</li><li>Enterprise demonstrations</li><li>Loom training guides</li></ul>
+    <section class="section" id="work">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">01 / Selected work</span>
+          <h2 class="section-title">A few things I've<br>made happen.</h2>
+        </div>
+        <p class="section-intro">A small selection of live Paperform projects. Each one solves a different problem — and has a little personality of its own.</p>
       </div>
-      <div>
-        <h3>Technical</h3>
-        <ul><li>REST APIs and webhooks</li><li>Calculations and conditional logic</li><li>Custom CSS and JavaScript</li><li>QA and engineering-ready bug reports</li></ul>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-image">
+            <img src="halloween.jpg" alt="Halloween Trick-or-Treat Registration form with a neon Halloween map banner" loading="lazy">
+          </div>
+          <div class="project-content">
+            <span class="project-number">PROJECT 01 · COMMUNITY</span>
+            <h3>Halloween Trick-or-Treat Registration</h3>
+            <p>A themed registration experience that connects neighbours with a live trick-or-treat map. Submissions become map markers with each home's hours, treats, and allergen details.</p>
+            <ul class="tags"><li>Custom theming</li><li>Address mapping</li><li>Event registration</li></ul>
+            <a class="project-link" href="https://rcdnplx5.paperform.co/" target="_blank" rel="noopener noreferrer">Explore the live form <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="art.jpg" alt="Digital Art Commission Request form with design choices and an abstract sculpture" loading="lazy">
+          </div>
+          <div class="project-content">
+            <span class="project-number">PROJECT 02 · AUTOMATION</span>
+            <h3>Digital Art Commission Request</h3>
+            <p>A guided brief where clients choose a design type, colour and visual direction, then upload inspiration. Stepper generates a sequential invoice number and emails it to the recipient.</p>
+            <ul class="tags"><li>File uploads</li><li>Workflow automation</li><li>Sequential numbering</li></ul>
+            <a class="project-link" href="https://q6oti4u3.paperform.co/" target="_blank" rel="noopener noreferrer">Explore the live form <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="innerc.jpg" alt="Find Your Inner C Baked Good quiz with a chocolate snail cookie" loading="lazy">
+          </div>
+          <div class="project-content">
+            <span class="project-number">PROJECT 03 · CALCULATIONS</span>
+            <h3>Find Your Inner 'C' Baked Good</h3>
+            <p>A playful 10-question personality quiz. Under the hood, calculations determine the result and an automated email delivers a pie chart showing the score breakdown.</p>
+            <ul class="tags"><li>Conditional logic</li><li>Calculations</li><li>Automated results</li></ul>
+            <a class="project-link" href="https://ynmg6bxk.paperform.co/" target="_blank" rel="noopener noreferrer">Try the quiz <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
       </div>
-      <div>
-        <h3>Platforms</h3>
-        <ul><li>Paperform, Papersign, Stepper</li><li>Zendesk, Intercom, HubSpot, Chargebee</li><li>Zapier, Make, Airtable, Notion</li><li>GitHub, Figma, Adobe Creative Suite</li></ul>
+    </section>
+
+    <section class="section" id="approach">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">02 / Behind the scenes</span>
+          <h2 class="section-title">The interesting bit<br>is what happens next.</h2>
+        </div>
+        <p class="section-intro">I like looking beyond the form itself and connecting the pieces by solving the operational puzzle and making the whole experience work.</p>
       </div>
-    </div>
-  </section>
+      <div class="process-grid">
+        <article class="process-card">
+          <span class="process-icon" aria-hidden="true">01</span>
+          <h3>Halloween Trick or Treat Registration</h3>
+          <p>Neighbours register their home for trick-or-treat night, with a neon theme that matches the map.</p>
+        </article>
+        <article class="process-card">
+          <span class="process-icon" aria-hidden="true">02</span>
+          <h3>Digital Art Commission Request</h3>
+          <p>Clients describe what they want created, pick a design type, primary colour and style direction, and upload inspiration files.</p>
+        </article>
+        <article class="process-card">
+          <span class="process-icon" aria-hidden="true">03</span>
+          <h3>Find Your Inner 'C' Baked Good</h3>
+          <p>A fun personality quiz: answer 10 quick questions to find out which baked good starting with C matches you.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="writing">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">03 / Help Centre writing</span>
+          <h2 class="section-title">Making the technical<br>feel approachable.</h2>
+        </div>
+        <p class="section-intro">I write step-by-step guides for Paperform and Stepper customers, testing features in a sandbox so the instructions are clear, accurate, and useful.</p>
+      </div>
+
+      <div class="articles-panel">
+        <a class="article-link" href="https://paperform.com/help/articles/sub-user-stepper-workflows-connecting-another-paperform-team/" target="_blank" rel="noopener noreferrer"><span>Connecting Stepper workflows as a sub-user</span><span class="product">Stepper ↗</span></a>
+        <a class="article-link" href="https://paperform.co/help/articles/how-can-i-check-my-submission-or-file-storage-usage-and-limits/" target="_blank" rel="noopener noreferrer"><span>Checking submission and file storage usage</span><span class="product">Paperform ↗</span></a>
+        <a class="article-link" href="https://paperform.com/help/articles/ai-reports-guide/" target="_blank" rel="noopener noreferrer"><span>AI Insights</span><span class="product">Paperform ↗</span></a>
+        <a class="article-link" href="https://paperform.com/help/articles/what-ai-features-does-paperform-have/" target="_blank" rel="noopener noreferrer"><span>What AI features does Paperform have?</span><span class="product">Paperform ↗</span></a>
+        <a class="article-link" href="https://paperform.com/help/articles/analytics-guide/" target="_blank" rel="noopener noreferrer"><span>Reports and Analytics Guide</span><span class="product">Paperform ↗</span></a>
+        <a class="article-link" href="https://paperform.com/help/articles/quicksurveyfields/" target="_blank" rel="noopener noreferrer"><span>Survey Quick Add</span><span class="product">Paperform ↗</span></a>
+        <a class="article-link" href="https://paperform.com/help/articles/getting-started-with-stepper/#:~:text=Testing%20your%20workflow-,Listen%20for%20a%20New%20Event,-There%20may%20be" target="_blank" rel="noopener noreferrer"><span>Listen for an event</span><span class="product">Stepper ↗</span></a>
+        <a class="article-link" href="https://paperform.com/help/articles/how-can-i-import-my-workflows-other-automation-tools-into-stepper/" target="_blank" rel="noopener noreferrer"><span>Importing workflows from other automation tools</span><span class="product">Stepper ↗</span></a>
+        <a class="article-link" href="https://paperform.com/help/articles/how-do-i-request-a-new-stepper-app/" target="_blank" rel="noopener noreferrer"><span>Requesting a new Stepper app</span><span class="product">Stepper ↗</span></a>
+        <a class="article-link" href="https://paperform.com/help/articles/how-to-pause-stepper-workflows-and-runs/" target="_blank" rel="noopener noreferrer"><span>Pausing Stepper workflows and runs</span><span class="product">Stepper ↗</span></a>
+      </div>
+      <p class="articles-note">Article screenshots created in Figma.</p>
+    </section>
+
+    <section class="section" id="toolkit">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">04 / My toolkit</span>
+          <h2 class="section-title">A mix of people<br>skills and tech skills.</h2>
+        </div>
+        <p class="section-intro">I find fulfilment in comparing what a customer needs with what a product can do, and bringing the right people and tools together to create the ideal solution.</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card">
+          <h3>Support & Success</h3>
+          <ul>
+            <li>Complex ticket troubleshooting</li>
+            <li>Customer onboarding and training</li>
+            <li>Enterprise demonstrations</li>
+            <li>Loom training guides</li>
+          </ul>
+        </article>
+        <article class="skill-card">
+          <h3>Technical & Creative</h3>
+          <ul>
+            <li>REST APIs and webhooks</li>
+            <li>Calculations and conditional logic</li>
+            <li>Custom CSS and JavaScript</li>
+            <li>QA and engineering-ready bug reports</li>
+          </ul>
+        </article>
+        <article class="skill-card">
+          <h3>Platforms & Tools</h3>
+          <ul>
+            <li>Paperform, Papersign, Stepper</li>
+            <li>Zendesk, Intercom, HubSpot, Chargebee</li>
+            <li>Zapier, Make, Airtable, Notion</li>
+            <li>GitHub, Figma, Adobe Creative Suite</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="closing" aria-label="Contact">
+      <div>
+        <h2>Reach Out</h2>
+        <p>Want to talk customer success, SaaS, or making tricky things work?</p>
+      </div>
+       <a class="button" href="mailto:mrsjennrobinson@gmail.com">Email me!</a>
+      <a class="button" href="https://www.linkedin.com/in/jennifer-robinson-4760a411/" target="_blank" rel="noopener noreferrer">Let's connect on LinkedIn↗</a>
+    </section>
+  </main>
 
   <footer>
-    <span class="label">Jenn Robinson · NSW, Australia</span>
-    <a class="label" href="https://www.linkedin.com/in/jennifer-robinson-4760a411/" target="_blank" rel="noopener">linkedin.com/in/jennifer-robinson-4760a411</a>
+    <span>Jenn Robinson · NSW, Australia</span>
+    <a href="https://www.linkedin.com/in/jennifer-robinson-4760a411/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    <span>Made with caffeine, curiosity, and a little CSS</span>
   </footer>
-
-</div>
-
-</body></html>
+</body>
+</html>
